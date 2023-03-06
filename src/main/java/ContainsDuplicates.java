@@ -9,22 +9,16 @@ public class ContainsDuplicates {
      */
     public boolean containsDuplicate(int[] nums){
         boolean ret = false;
-
-        int check = nums[0];
        for (int i = 0; i < nums.length; i ++){
-         if (ret == true){
-           for (int test = 1; test < nums.length; test++ )            {
-            if (check == nums[test]){
-              return ret = true;
-             } 
+            for (int test = i+1; test < nums.length; test++ ){
+              if (nums[i] == nums[test]){
+                ret = true;
+                return ret;
+              }
+            
            }
-        }else{
-            return ret = false;
-           }
-        
+                 
   } 
   return ret;
-
-       
-    }
+  }
 }
